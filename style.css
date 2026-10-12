@@ -4,25 +4,70 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 /********************** Overall ******************/
-* {
+body {
   background-color: black;
-  color: #fffdc2;
+  color: #fffdc4;
 }
 
+/* GENERELLE ELEMENTER */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* GENERELLE KNAPPER */
+.knap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 25px;
+
+  background-color: #fffdc4;
+  color: black;
+
+  border: 2px solid black;
+  border-radius: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  white-space: nowrap;
+}
+
+.knap:hover {
+  background-color: black;
+  color: #fffdc4;
+  border-color: #fffdc4;
+}
+
+.sektion-beskrivelse {
+  text-align: center;
+  text-wrap: balance;
+  max-width: 600px;
+  margin-inline: auto;
+}
 /********************** Menu ******************/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 header {
   position: sticky;
   top: 0;
@@ -32,6 +77,7 @@ header {
   padding: 20px;
   background-color: black;
   box-shadow: 10px 10px 10px #fffdc2;
+  z-index: 10;
 
   .logo img {
     width: 200px;
@@ -40,7 +86,6 @@ header {
 }
 
 nav {
-  /** Desktop */
   display: flex;
   align-items: center;
 
@@ -134,11 +179,6 @@ nav {
 }
 
 /********************** MENU - Tilføjelser ******************/
-
-.logo {
-  width: fit-content;
-}
-
 .logo a {
   display: block;
   width: fit-content;
@@ -147,12 +187,6 @@ nav {
 .logo img {
   width: 200px;
   height: auto;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
 }
 
 @media (width < 700px) {
@@ -181,10 +215,7 @@ header {
 }
 
 /********************** Footer ******************/
-
 footer {
-  background-color: black;
-  color: #fffdc2;
   text-align: center;
   padding: 50px 20px;
 }
@@ -236,7 +267,6 @@ footer p {
 }
 
 /******************** Footer desktop ********************/
-
 @media (width > 800px) {
   footer {
     padding: 60px 20px;
@@ -271,4 +301,202 @@ footer p {
     font-size: 20px;
     margin-top: 40px;
   }
+}
+
+/********************** Forside ******************/
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  width: 100%;
+  min-height: calc(100dvh - 80px);
+  min-height: 450px;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+
+  display: grid;
+  gap: 25px;
+}
+
+.hero-content p {
+  text-wrap: pretty;
+}
+
+/********************** Knap i hero ******************/
+.film-knap {
+  display: block;
+  width: fit-content;
+  justify-self: center;
+  text-decoration: none;
+}
+
+.film-knap-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  background-color: #fffdc4;
+  border-radius: 15px;
+  padding: 20px;
+
+  border: 2px solid black;
+  transition: 0.3s ease;
+}
+
+.film-knap-content p {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.film-knap-content img {
+  width: 45px;
+  height: auto;
+  background: transparent;
+}
+
+/* HOVER PÅ KNAP*/
+/* Baggrund og kant */
+.film-knap:hover .film-knap-content {
+  background-color: black;
+  border-color: #fffdc4;
+}
+
+/* Tekst */
+.film-knap:hover .film-knap-content p {
+  color: #fffdc4;
+}
+
+/* Pil */
+.film-knap:hover .film-knap-content img {
+  filter: brightness(0) saturate(100%) invert(95%) sepia(25%) saturate(700%);
+}
+
+/* NÆSTE FILM */
+.naeste-film {
+  padding: 60px 20px;
+
+  display: grid;
+  gap: 8px;
+}
+
+.naeste-film h2 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.naeste-film > img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.naeste-film .knap {
+  justify-self: end;
+}
+
+/* **************** KOMMENDE FILM **************** */
+.kommende-film {
+  padding: 60px 20px;
+}
+
+/* Overskrift */
+.kommende-film h2 {
+  text-align: center;
+  margin: 0 0 15px;
+}
+
+/* Beskrivelse */
+.kommende-film .sektion-beskrivelse {
+  margin-bottom: 50px;
+}
+
+/* Container med alle film */
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+}
+
+/* Hvert filmkort */
+.kommende-film .grid_1-2 {
+  align-items: start;
+}
+
+/* Billeder */
+.kommende-film .grid_1-2 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Filmtitler */
+.kommende-film .grid_1-2 h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Prik foran dato */
+.kommende-film .grid_1-2 p:first-of-type::before {
+  content: "•";
+  margin-right: 10px;
+}
+
+/* *************** OM FILMKLUBBEN *************** */
+.om-filmklubben {
+  background-color: #202020;
+  padding: 60px 30px;
+
+  display: grid;
+  gap: 25px;
+}
+
+/* Overskrift */
+.om-filmklubben h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Beskrivelse */
+.om-filmklubben .sektion-beskrivelse {
+  text-align: left;
+  max-width: none;
+  line-height: 1.5;
+}
+
+/* Skjul desktopindhold på mobil */
+.om-info,
+.om-billede {
+  display: none;
+}
+
+/* LÆS MERE-knap */
+.om-knap {
+  justify-self: center;
+  min-width: 190px;
+  margin-top: 10px;
 }

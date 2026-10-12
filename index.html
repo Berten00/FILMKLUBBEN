@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="icon" href="./iconer/faviconet.png" type="image/x-icon">
-    <meta name="description" content="Denne side er for en filmklub">
+    <meta name="description"
+        content="Filmklubben samler filmelskere i København til fælles filmvisninger og samtaler om film. Se kommende film og tilmeld dig næste visning.">
 </head>
 
 <body>
@@ -34,89 +35,127 @@
 
 
     <main>
-        <h1>FILM ER BEDRE SAMMEN</h1>
-        <p>Se store film på det store lærred, og bliv hængende til samtalen bagefter.</p>
-        <div class="grid_1-1">
-            <div>
-                <p>KOMMENDE FILM</p>
-            </div>
-            <p>pil</p>
-        </div>
+        <div class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="./imgs/forside/HERO_BAGGRUND_pt5.mp4" type="video/mp4">
+            </video>
 
-        <h2>NÆSTE FILM</h2>
-        <img src="./imgs/forside/mobil/img1_brutalist.webp" alt="the brutalist">
-        <div class="grid_2-1">
-            <h3>THE BRUTALIST</h3>
-            <div class="knap">
-                <a href="./tilmeld.html"></a>
-                <p>KNAP</p>
-            </div>
-        </div>
-        <p>1. januar 19:30 - Biograf</p>
-        <p>Pris: 100kr.</p>
-        <p>Efterkrigstidens Amerika danner rammen om Brady Corbets monumentale fortælling om arkitekten László Tóth, der
-            forsøger
-            at skabe sig et nyt liv.</p>
-
-        <h2>KOMMENDE FILM</h2>
-        <p>Se hvilke film vi viser i den kommende tid. Find dato, tidspunkt og biograf nedenfor.</p>
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img2_mulholland-drive.webp" alt="mulholland drive">
-            <div>
-                <h3>Mulholland Drive</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
-            </div>
-        </div>
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img3_in-the-mood-for-love.webp" alt="in the mood for love">
-            <div>
-                <h3>In The Mood For Love</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
+            <div class="hero-content">
+                <h1>FILM ER BEDRE SAMMEN</h1>
+                <p>Se store film på det store lærred, og bliv hængende til samtalen bagefter.</p>
+                <a href="./kommende_film.html" class="film-knap">
+                    <div class="film-knap-content">
+                        <p>KOMMENDE FILM</p>
+                        <img src="./iconer/pil.png" alt="pil">
+                    </div>
+                </a>
             </div>
         </div>
 
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img4_paris-texas.webp" alt="Paris, Texas">
-            <div>
-                <h3>Paris, Texas</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
+        <section class="naeste-film">
+            <h2>NÆSTE FILM</h2>
+            <img src="./imgs/forside/mobil/img1_brutalist.webp" alt="the brutalist">
+            <div class="grid_2-1">
+                <h3>THE BRUTALIST</h3>
+                <a href="./tilmeld.html" class="knap">TILMELD MIG</a>
             </div>
-        </div>
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img5_there-will-be-blood.webp" alt="There Will Be Blood">
-            <div>
-                <h3>There Will Be Blood</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
-            </div>
-        </div>
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img6_persona.webp" alt="Persona">
-            <div>
-                <h3>Persona</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
-            </div>
-        </div>
-        <div class="grid_1-2">
-            <img src="./imgs/forside/mobil/img7_perfect-blue.webp" alt="Perfect Blue">
-            <div>
-                <h3>Perfect Blue</h3>
-                <p>* 1. januar 19:30 - Biograf</p>
-                <p>Pris: 100kr.</p>
-            </div>
-        </div>
+            <p>1. januar 19:30 - Biograf</p>
+            <p>Pris: 100kr.</p>
+            <p>Efterkrigstidens Amerika danner rammen om Brady Corbets monumentale fortælling om arkitekten László Tóth,
+                der
+                forsøger
+                at skabe sig et nyt liv.</p>
+        </section>
 
-        <h2>Om filmklubben</h2>
-        <p>Filmklubben samler filmelskere til udvalgte filmvisninger i København. Efter hver visning er der mulighed for
-            at blive
-            hængende, dele sine tanker og diskutere filmen med andre.</p>
-        <div class="knap">
-            <p>LÆS MERE</p>
-        </div>
+        <section class="kommende-film">
+            <h2>KOMMENDE FILM</h2>
+            <p class="sektion-beskrivelse">
+                Se hvilke film vi viser i den kommende tid.
+                Find dato, tidspunkt og biograf nedenfor.
+            </p>
+            <div class="film-grid">
+
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img2_mulholland-drive.webp" alt="mulholland drive">
+                    <div>
+                        <h3>Mulholland Drive</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img3_in-the-mood-for-love.webp" alt="in the mood for love">
+                    <div>
+                        <h3>In The Mood For Love</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img4_paris-texas.webp" alt="Paris, Texas">
+                    <div>
+                        <h3>Paris, Texas</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img5_there-will-be-blood.webp" alt="There Will Be Blood">
+                    <div>
+                        <h3>There Will Be Blood</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img6_persona.webp" alt="Persona">
+                    <div>
+                        <h3>Persona</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+                <div class="grid_1-2">
+                    <img src="./imgs/forside/mobil/img7_perfect-blue.webp" alt="Perfect Blue">
+                    <div>
+                        <h3>Perfect Blue</h3>
+                        <p>1. januar 19:30 - Biograf</p>
+                        <p>Pris: 100kr.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="om-filmklubben">
+
+            <h2>OM FILMKLUBBEN</h2>
+
+            <p class="sektion-beskrivelse">
+                Filmklubben samler filmelskere til udvalgte filmvisninger i København.
+                Efter hver visning er der mulighed for at blive hængende,
+                dele sine tanker og diskutere filmen med andre.
+            </p>
+
+            <div class="om-info">
+                <div>
+                    <h3>1 VISNING OM MÅNEDEN</h3>
+                    <p>Du er med til at bestemme hvad vi ser</p>
+                </div>
+
+                <div>
+                    <h3>SAMTALE EFTER FILMEN</h3>
+                    <p>Del dine tanker med andre</p>
+                </div>
+            </div>
+
+            <img class="om-billede" src="./imgs/forside/desktop/8img_biograf.webp" alt="Publikum ser film i en biograf"
+                loading="lazy">
+
+            <a href="./index.html" class="knap om-knap">
+                LÆS MERE
+            </a>
+
+        </section>
     </main>
 
     <footer>
@@ -134,8 +173,13 @@
         </div>
 
         <div class="socials grid_1-1">
-            <img src="./imgs/overall /icon1_facebook.webp" alt="Facebook">
-            <img src="./imgs/overall /icon2_instagram.webp" alt="Instagram">
+            <a href="./index.html">
+                <img src="./imgs/overall /icon1_facebook.webp" alt="Facebook">
+            </a>
+
+            <a href="./index.html">
+                <img src="./imgs/overall /icon2_instagram.webp" alt="Instagram">
+            </a>
         </div>
 
         <p>© 2026 Filmklubben · København</p>

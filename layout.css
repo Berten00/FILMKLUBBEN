@@ -1,3 +1,143 @@
+/* GENERELLE GRID-KLASSER */
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 15px;
+}
+
+.grid_1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+}
+
+/************    Forside     **************/
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+    place-items: center left;
+  }
+
+  .hero-content {
+    grid-column: 1;
+    text-align: left;
+    padding: 40px;
+  }
+
+  .film-knap {
+    justify-self: start;
+  }
+}
+
+/************    NÆSTE FILM     **************/
+@media (min-width: 768px) {
+  .naeste-film {
+    padding: 80px 60px;
+    gap: 30px;
+  }
+
+  .naeste-film > img {
+    max-width: 1000px;
+    justify-self: center;
+  }
+
+  .naeste-film h2 {
+    font-size: 48px;
+  }
+}
+
+/* **************** KOMMENDE FILM - DESKTOP **************** */
+@media (min-width: 768px) {
+  .kommende-film {
+    padding: 80px 60px;
+  }
+
+  /* Tre film pr. række */
+  .film-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 25px;
+  }
+
+  /* Billede over tekst */
+  .kommende-film .grid_1-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Billedernes proportioner */
+  .kommende-film .grid_1-2 img {
+    aspect-ratio: 303.5 / 244;
+  }
+
+  /* Centrer tekst */
+  .kommende-film .grid_1-2 > div {
+    text-align: center;
+  }
+
+  .kommende-film .grid_1-2 h3 {
+    margin-bottom: 5px;
+  }
+
+  /* Fjern prik på desktop */
+  .kommende-film .grid_1-2 p:first-of-type::before {
+    content: none;
+  }
+}
+
+/* *************** OM FILMKLUBBEN - DESKTOP *************** */
+@media (min-width: 768px) {
+  .om-filmklubben {
+    padding: 80px 60px;
+    gap: 35px;
+  }
+
+  /* Overskrift */
+  .om-filmklubben h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Beskrivelse */
+  .om-filmklubben .sektion-beskrivelse {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  /* To informationsfelter */
+  .om-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .om-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .om-info p {
+    font-size: 14px;
+  }
+
+  /* Biografbillede */
+  .om-billede {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+  }
+
+  /* Skjul knap */
+  .om-knap {
+    display: none;
+  }
+}
+
 /************    Footer     **************/
 footer .grid_1-1 {
   display: grid;
@@ -10,6 +150,7 @@ footer .socials {
   justify-content: center;
   column-gap: 40px;
 }
+
 @media (width > 800px) {
   footer .footer_links {
     grid-template-columns: repeat(4, 1fr);
