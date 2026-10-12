@@ -77,3 +77,67 @@ if (saedeGrid) {
     saedeGrid.appendChild(saede);
   }
 }
+
+/* *************** GENRE FILTER *************** */
+
+const genreKnap = document.querySelector("#genre-knap");
+const genreListe = document.querySelector("#genre-liste");
+const alleKnap = document.querySelector(".filter-alle");
+
+if (genreKnap && genreListe && alleKnap) {
+  genreKnap.addEventListener("click", () => {
+    genreListe.hidden = !genreListe.hidden;
+    genreKnap.setAttribute("aria-expanded", String(!genreListe.hidden));
+  });
+
+  genreListe.querySelectorAll("button").forEach((knap) => {
+    knap.addEventListener("click", () => {
+      genreKnap.querySelector("span").textContent = "⌄";
+      genreKnap.firstChild.textContent = knap.dataset.genre.toUpperCase() + " ";
+
+      alleKnap.classList.remove("aktiv");
+      genreListe.hidden = true;
+      genreKnap.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  alleKnap.addEventListener("click", () => {
+    alleKnap.classList.add("aktiv");
+    genreKnap.firstChild.textContent = "GENRE ";
+    genreListe.hidden = true;
+    genreKnap.setAttribute("aria-expanded", "false");
+  });
+}
+/* *************** GENREFILTER DESKTOP *************** */
+
+const desktopGenrer = document.querySelectorAll(".filter-desktop button");
+
+desktopGenrer.forEach((knap) => {
+  knap.addEventListener("click", () => {
+    desktopGenrer.forEach((genre) => {
+      genre.classList.remove("aktiv");
+    });
+
+    knap.classList.add("aktiv");
+  });
+});
+
+const genreKnapper = document.querySelectorAll(".filter-desktop button");
+const filmKort = document.querySelectorAll(".film-kort");
+
+genreKnapper.forEach((knap) => {
+  knap.addEventListener("click", () => {
+    const genre = knap.dataset.genre;
+
+    genreKnapper.forEach((k) => k.classList.remove("aktiv"));
+    knap.classList.add("aktiv");
+
+    filmKort.forEach((film) => {
+      if (genre === "Alle" || film.dataset.genre === genre) {
+        film.style.display = "";
+      } else {
+        film.style.display = "none";
+      }
+    });
+  });
+});

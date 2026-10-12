@@ -751,3 +751,189 @@ footer p {
   cursor: pointer;
   margin-top: 40px;
 }
+
+/* *************** KOMMENDE FILM *************** */ /* *************** KOMMENDE FILM *************** */
+
+/* *************** FILM FILTER *************** */
+
+.film-filter {
+  padding: 60px 20px 30px;
+  border-bottom: 2px solid #fffdc4;
+}
+
+/* Overskrift */
+
+.film-filter h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+/* Beskrivelse */
+
+.film-filter > p {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+/* Filterknapper */
+
+.filter-menu {
+  margin-top: 60px;
+}
+
+.filter-mobil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-desktop {
+  display: none;
+}
+
+.filter-desktop button.aktiv {
+  border-color: #fffdc4;
+}
+
+.filter-menu button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fffdc4;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ALLE-knap */
+
+.filter-alle {
+  justify-self: start;
+  padding: 12px 20px;
+  border: 3px solid transparent;
+}
+
+.filter-alle.aktiv {
+  border-color: #fffdc4;
+}
+
+/* Genre dropdown */
+
+.genre-menu {
+  position: relative;
+  justify-self: end;
+}
+
+.genre-knap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: none;
+  padding: 12px 0;
+}
+
+/* Dropdown indhold */
+
+.genre-liste {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+  background-color: black;
+  border: 2px solid #fffdc4;
+  z-index: 10;
+}
+
+.genre-liste[hidden] {
+  display: none;
+}
+
+.genre-liste button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  text-align: left;
+}
+
+.genre-liste button:hover {
+  background-color: #fffdc4;
+  color: black;
+}
+
+/* *************** FILM OVERSIGT *************** */
+
+.film-oversigt {
+  padding: 40px 20px 60px;
+}
+
+/* Container med filmkort */
+
+.film-kort-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Hvert filmkort */
+
+.film-kort {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #fffdc4;
+}
+
+/* Filmbilleder */
+
+.film-kort img {
+  display: block;
+  width: 100%;
+}
+
+/* Tekstindhold */
+
+.film-kort-indhold {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  flex: 1;
+}
+
+/* Dato og pris */
+
+.film-dato,
+.film-pris {
+  font-size: 12px;
+}
+
+/* Filmtitel */
+
+.film-kort h2 {
+  font-size: 22px;
+}
+
+/* Instruktør og spilletid */
+
+.film-detaljer {
+  font-size: 14px;
+}
+
+/* Læs mere-knap */
+
+.film-laes-mere {
+  display: block;
+  margin-top: auto;
+  padding: 12px;
+  border: 2px solid #fffdc4;
+  color: #fffdc4;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.film-laes-mere:hover {
+  background-color: #fffdc4;
+  color: black;
+}
