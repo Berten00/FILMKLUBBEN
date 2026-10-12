@@ -12,7 +12,7 @@
   gap: 15px;
 }
 
-/************    Forside     **************/
+/************    Forside     **************/ /************    Forside     **************/ /************    Forside     **************/
 @media (min-width: 768px) {
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -38,13 +38,31 @@
     gap: 30px;
   }
 
-  .naeste-film > img {
-    max-width: 1000px;
-    justify-self: center;
-  }
-
   .naeste-film h2 {
     font-size: 48px;
+  }
+
+  .naeste-film-indhold {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .naeste-film picture {
+    width: 100%;
+  }
+
+  .naeste-film picture img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .naeste-film-tekst {
+    display: grid;
+    gap: 20px;
+    align-content: center;
   }
 }
 
@@ -138,7 +156,57 @@
   }
 }
 
-/************    Footer     **************/
+/* *************** TILMELD FILM - DESKTOP *************** */ /* *************** TILMELD FILM - DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .tilmeld-film {
+    padding: 80px 60px;
+  }
+
+  .tilmeld-film-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .tilmeld-film-grid img {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* *************** TILMELD FORMULAR - DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .tilmeld-formular {
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 60px 20px;
+  }
+}
+
+/* *************** SÆDEVALG DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .saedevalg {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .saede-grid {
+    gap: 10px;
+  }
+
+  .saede-forklaring {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .privatliv {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+/************    Footer     **************/ /************    Footer     **************/ /************    Footer     **************/
 footer .grid_1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
