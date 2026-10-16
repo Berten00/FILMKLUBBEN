@@ -16,7 +16,7 @@
 @media (min-width: 768px) {
   .hero {
     grid-template-columns: 1fr 1fr;
-    min-height: 580px;
+    min-height: calc(100dvh - 80px);
     place-items: center left;
   }
 

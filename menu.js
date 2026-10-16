@@ -141,3 +141,11 @@ genreKnapper.forEach((knap) => {
     });
   });
 });
+
+const scrollIndikator = document.querySelector(".scroll-indikator");
+
+window.addEventListener("scroll", () => {
+  if (scrollIndikator) {
+    scrollIndikator.style.opacity = window.scrollY > 100 ? "0" : "1";
+  }
+});

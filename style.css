@@ -319,8 +319,7 @@ footer p {
   grid-template-columns: 1fr;
   place-items: center;
   width: 100%;
-  min-height: calc(100dvh - 80px);
-  min-height: 450px;
+  height: calc(100dvh - 120px);
   overflow: hidden;
 }
 
@@ -371,6 +370,14 @@ footer p {
 
 .film-overskrift span:last-child {
   font-size: 1.5em;
+}
+
+.scroll-indikator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 /********************** Knap i hero ******************/
 .film-knap {
@@ -444,6 +451,34 @@ footer p {
   justify-self: end;
 }
 
+/* SCROLL INDIKATOR */
+
+.scroll-indikator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+
+  color: #fffdc4;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.scroll-pil {
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  line-height: 0.5;
+  letter-spacing: -4px;
+  transform: rotate(90deg);
+}
 /* **************** KOMMENDE FILM **************** */
 .kommende-film {
   padding: 60px 20px;
