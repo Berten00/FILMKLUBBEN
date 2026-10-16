@@ -102,6 +102,10 @@
   .kommende-film .grid_1-2 p:first-of-type::before {
     content: none;
   }
+
+  .film-filter .film-overskrift {
+    font-size: clamp(50px, 6vw, 110px);
+  }
 }
 
 /* *************** OM FILMKLUBBEN - DESKTOP *************** */

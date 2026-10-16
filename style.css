@@ -9,6 +9,7 @@
 body {
   background-color: black;
   color: #fffdc4;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 /* GENERELLE ELEMENTER */
@@ -16,6 +17,12 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+h1,
+h2,
+h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
 }
 
 h2 {
@@ -43,9 +50,10 @@ p {
 
   background-color: #fffdc4;
   color: black;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
 
   border: 2px solid black;
-  border-radius: 15px;
 
   font-size: 16px;
   font-weight: bold;
@@ -344,8 +352,26 @@ footer p {
 
 .hero-content p {
   text-wrap: pretty;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
 }
 
+.film-overskrift {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(24px, 6vw, 50px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.film-overskrift span {
+  display: block;
+}
+
+.film-overskrift span:last-child {
+  font-size: 1.5em;
+}
 /********************** Knap i hero ******************/
 .film-knap {
   display: block;
@@ -360,7 +386,6 @@ footer p {
   align-items: center;
 
   background-color: #fffdc4;
-  border-radius: 15px;
   padding: 20px;
 
   border: 2px solid black;
@@ -516,6 +541,7 @@ footer p {
 .tilmeld-film h2 {
   text-align: center;
   margin-bottom: 40px;
+  font-size: 50px;
 }
 
 /* Billede og tekst */
@@ -574,7 +600,6 @@ footer p {
   width: 100%;
   min-width: 0;
   padding: 15px;
-  border-radius: 5px;
   background-color: #fffdc4;
   font: inherit;
 }
@@ -586,7 +611,6 @@ footer p {
   align-items: center;
   width: 200px;
   background-color: #fffdc4;
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -646,7 +670,6 @@ footer p {
 .saede {
   aspect-ratio: 1 / 1;
   border: none;
-  border-radius: 5px;
 }
 
 /* Ledigt */
@@ -727,7 +750,7 @@ footer p {
   height: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: black;
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -753,30 +776,25 @@ footer p {
 }
 
 /* *************** KOMMENDE FILM *************** */ /* *************** KOMMENDE FILM *************** */
-
 /* *************** FILM FILTER *************** */
-
 .film-filter {
   padding: 60px 20px 30px;
   border-bottom: 2px solid #fffdc4;
 }
 
 /* Overskrift */
-
 .film-filter h1 {
-  font-size: 32px;
+  font-size: 50px;
   margin-bottom: 15px;
 }
 
 /* Beskrivelse */
-
 .film-filter > p {
   font-size: 18px;
   margin-bottom: 60px;
 }
 
 /* Filterknapper */
-
 .filter-menu {
   margin-top: 60px;
 }
@@ -806,7 +824,6 @@ footer p {
 }
 
 /* ALLE-knap */
-
 .filter-alle {
   justify-self: start;
   padding: 12px 20px;
@@ -818,7 +835,6 @@ footer p {
 }
 
 /* Genre dropdown */
-
 .genre-menu {
   position: relative;
   justify-self: end;
@@ -833,7 +849,6 @@ footer p {
 }
 
 /* Dropdown indhold */
-
 .genre-liste {
   position: absolute;
   top: 100%;
@@ -862,13 +877,11 @@ footer p {
 }
 
 /* *************** FILM OVERSIGT *************** */
-
 .film-oversigt {
   padding: 40px 20px 60px;
 }
 
 /* Container med filmkort */
-
 .film-kort-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -876,7 +889,6 @@ footer p {
 }
 
 /* Hvert filmkort */
-
 .film-kort {
   display: flex;
   flex-direction: column;
@@ -884,14 +896,12 @@ footer p {
 }
 
 /* Filmbilleder */
-
 .film-kort img {
   display: block;
   width: 100%;
 }
 
 /* Tekstindhold */
-
 .film-kort-indhold {
   display: flex;
   flex-direction: column;
@@ -901,26 +911,22 @@ footer p {
 }
 
 /* Dato og pris */
-
 .film-dato,
 .film-pris {
   font-size: 12px;
 }
 
 /* Filmtitel */
-
 .film-kort h2 {
   font-size: 22px;
 }
 
 /* Instruktør og spilletid */
-
 .film-detaljer {
   font-size: 14px;
 }
 
 /* Læs mere-knap */
-
 .film-laes-mere {
   display: block;
   margin-top: auto;
@@ -931,6 +937,8 @@ footer p {
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s ease;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
 }
 
 .film-laes-mere:hover {
