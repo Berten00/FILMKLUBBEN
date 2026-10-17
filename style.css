@@ -90,7 +90,7 @@ header {
 
   .logo img {
     width: 200px;
-    height: auto px;
+    height: auto;
   }
 }
 
@@ -686,12 +686,12 @@ footer p {
   display: grid;
   grid-template-columns:
     repeat(6, minmax(0, 1fr))
-    30px
+    20px
     repeat(4, minmax(0, 1fr))
-    30px
+    20px
     repeat(6, minmax(0, 1fr));
 
-  gap: 10px;
+  gap: 6px;
 }
 
 .saede-grid .saede:nth-child(16n + 7) {

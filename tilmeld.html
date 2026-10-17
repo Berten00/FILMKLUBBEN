@@ -23,7 +23,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="./imgs/overall /logo1.webp" alt="Logo">
+                <img src="./imgs/overall/logo1.webp" alt="Logo" width="400" height="100">
             </a>
         </div>
         <nav>
@@ -32,7 +32,7 @@
                 <li><a href="">Om filmklubben</a></li>
                 <li><a href="">Bliv medlem</a></li>
             </ul>
-            <button class="burger">
+            <button class="burger" aria-label="Åbn menu">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
@@ -48,8 +48,8 @@
             <div class="tilmeld-film-grid">
                 <picture>
                     <source media="(min-width: 768px)" srcset="./imgs/tilmeld/1img_brutalist.webp">
-                    <img src="./imgs/forside/mobil/img1_brutalist.webp"
-                        alt="Scene fra The Brutalist med en mand foran en byggeplads">
+                    <img src="./imgs/tilmeld/img1_brutalist.webp"
+                        alt="Scene fra The Brutalist med en mand foran en byggeplads" fetchpriority="high">
                 </picture>
 
                 <div class="tilmeld-film-tekst">
@@ -92,8 +92,7 @@
                         <button type="button" id="plus" aria-label="Tilføj en billet">+</button>
                     </div>
                 </div>
-
-
+            </form>
         </section>
 
         <!-- SÆDEVALG -->
@@ -129,14 +128,13 @@
         <button type="submit" class="knap betalingsknap">
             GÅ TIL BETALING
         </button>
-        </form>
 
     </main>
 
     <footer>
         <div class="logo">
             <a href="index.html">
-                <img src="./imgs/overall /logo1.webp" alt="Logo">
+                <img src="./imgs/overall/logo1.webp" alt="Logo" width="400" height="100">
             </a>
         </div>
 
@@ -148,8 +146,13 @@
         </div>
 
         <div class="socials grid_1-1">
-            <img src="./imgs/overall /icon1_facebook.webp" alt="Facebook">
-            <img src="./imgs/overall /icon2_instagram.webp" alt="Instagram">
+            <a href="./tilmeld.html">
+                <img src="./imgs/overall/icon1_facebook.webp" alt="Facebook">
+            </a>
+
+            <a href="./tilmeld.html">
+                <img src="./imgs/overall/icon2_instagram.webp" alt="Instagram">
+            </a>
         </div>
 
         <p>© 2026 Filmklubben · København</p>
