@@ -4,25 +4,79 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-/********************** Overall ******************/
-* {
+/********************** Overall ******************/ /********************** Overall ******************/
+
+body {
   background-color: black;
-  color: #fffdc2;
+  color: #fffdc4;
+  font-family: "Space Grotesk", sans-serif;
 }
 
-/********************** Menu ******************/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* GENERELLE ELEMENTER */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* GENERELLE KNAPPER */
+.knap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 25px;
+
+  background-color: #fffdc4;
+  color: black;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+
+  border: 2px solid black;
+
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  white-space: nowrap;
+}
+
+.knap:hover {
+  background-color: black;
+  color: #fffdc4;
+  border-color: #fffdc4;
+}
+
+.sektion-beskrivelse {
+  text-align: center;
+  text-wrap: balance;
+  max-width: 600px;
+  margin-inline: auto;
+}
+/********************** Menu ******************/ /********************** Menu ******************/
 header {
   position: sticky;
   top: 0;
@@ -32,15 +86,15 @@ header {
   padding: 20px;
   background-color: black;
   box-shadow: 10px 10px 10px #fffdc2;
+  z-index: 10;
 
   .logo img {
     width: 200px;
-    height: auto px;
+    height: auto;
   }
 }
 
 nav {
-  /** Desktop */
   display: flex;
   align-items: center;
 
@@ -134,11 +188,6 @@ nav {
 }
 
 /********************** MENU - Tilføjelser ******************/
-
-.logo {
-  width: fit-content;
-}
-
 .logo a {
   display: block;
   width: fit-content;
@@ -147,12 +196,6 @@ nav {
 .logo img {
   width: 200px;
   height: auto;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
 }
 
 @media (width < 700px) {
@@ -180,17 +223,8 @@ header {
   }
 }
 
-/********************** Footer ******************/
-/*.socials {
-  border-top: 2px solid #fffdc2;
-  width: 70%;
-  margin: 30px auto 0;
-  padding-top: 30px;
-}*/
-
+/********************** Footer ******************/ /********************** Footer ******************/
 footer {
-  background-color: black;
-  color: #fffdc2;
   text-align: center;
   padding: 50px 20px;
 }
@@ -242,7 +276,6 @@ footer p {
 }
 
 /******************** Footer desktop ********************/
-
 @media (width > 800px) {
   footer {
     padding: 60px 20px;
@@ -277,4 +310,673 @@ footer p {
     font-size: 20px;
     margin-top: 40px;
   }
+}
+
+/********************** Forside ******************/ /********************** Forside ******************/
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  width: 100%;
+  height: calc(100dvh - 120px);
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+
+  display: grid;
+  gap: 25px;
+}
+
+.hero-content p {
+  text-wrap: pretty;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+}
+
+.film-overskrift {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(24px, 6vw, 50px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+}
+
+.film-overskrift span {
+  display: block;
+}
+
+.film-overskrift span:last-child {
+  font-size: 1.5em;
+}
+
+.scroll-indikator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+/********************** Knap i hero ******************/
+.film-knap {
+  display: block;
+  width: fit-content;
+  justify-self: center;
+  text-decoration: none;
+}
+
+.film-knap-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  background-color: #fffdc4;
+  padding: 20px;
+
+  border: 2px solid black;
+  transition: 0.3s ease;
+}
+
+.film-knap-content p {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.film-knap-content img {
+  width: 45px;
+  height: auto;
+  background: transparent;
+}
+
+/* HOVER PÅ KNAP*/
+/* Baggrund og kant */
+.film-knap:hover .film-knap-content {
+  background-color: black;
+  border-color: #fffdc4;
+}
+
+/* Tekst */
+.film-knap:hover .film-knap-content p {
+  color: #fffdc4;
+}
+
+/* Pil */
+.film-knap:hover .film-knap-content img {
+  filter: brightness(0) saturate(100%) invert(95%) sepia(25%) saturate(700%);
+}
+
+/* NÆSTE FILM */
+.naeste-film {
+  padding: 60px 20px;
+
+  display: grid;
+  gap: 8px;
+}
+
+.naeste-film h2 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.naeste-film picture img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.naeste-film .knap {
+  justify-self: end;
+}
+
+/* SCROLL INDIKATOR */
+
+.scroll-indikator {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+
+  color: #fffdc4;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.scroll-pil {
+  font-family: Arial, sans-serif;
+  font-size: 40px;
+  line-height: 0.5;
+  letter-spacing: -4px;
+  transform: rotate(90deg);
+}
+/* **************** KOMMENDE FILM **************** */
+.kommende-film {
+  padding: 60px 20px;
+}
+
+/* Overskrift */
+.kommende-film h2 {
+  text-align: center;
+  margin: 0 0 15px;
+}
+
+/* Beskrivelse */
+.kommende-film .sektion-beskrivelse {
+  margin-bottom: 50px;
+}
+
+/* Container med alle film */
+.film-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 35px;
+}
+
+/* Hvert filmkort */
+.kommende-film .grid_1-2 {
+  align-items: start;
+}
+
+/* Billeder */
+.kommende-film .grid_1-2 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.kommende-film .grid_1-2 picture {
+  display: block;
+  width: 100%;
+}
+
+/* Filmtitler */
+.kommende-film .grid_1-2 h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Prik foran dato */
+.kommende-film .grid_1-2 p:first-of-type::before {
+  content: "•";
+  margin-right: 10px;
+}
+
+/* *************** OM FILMKLUBBEN *************** */
+.om-filmklubben {
+  background-color: #202020;
+  padding: 60px 30px;
+
+  display: grid;
+  gap: 25px;
+}
+
+/* Overskrift */
+.om-filmklubben h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Beskrivelse */
+.om-filmklubben .sektion-beskrivelse {
+  text-align: left;
+  max-width: none;
+  line-height: 1.5;
+}
+
+/* Skjul desktopindhold på mobil */
+.om-info,
+.om-billede {
+  display: none;
+}
+
+/* LÆS MERE-knap */
+.om-knap {
+  justify-self: center;
+  min-width: 190px;
+  margin-top: 10px;
+}
+
+/* *************** TILMELD FILM *************** */ /* *************** TILMELD FILM *************** */
+.tilmeld-film {
+  padding: 60px 20px;
+}
+
+/* Overskrift */
+.tilmeld-film h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 50px;
+}
+
+/* Billede og tekst */
+.tilmeld-film-grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* Billede */
+.tilmeld-film img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+/* Filmens titel */
+.tilmeld-film h3 {
+  margin-bottom: 10px;
+}
+
+/* Filmens oplysninger */
+.tilmeld-film-tekst {
+  display: grid;
+  gap: 15px;
+}
+
+/* *************** TILMELD FORMULAR *************** */
+.tilmeld-formular {
+  padding: 20px;
+}
+
+#billet-form {
+  display: grid;
+  gap: 30px;
+}
+
+/* Fornavn og efternavn */
+.navn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Formularfelter */
+.formular-felt {
+  display: grid;
+  gap: 8px;
+}
+
+.formular-felt label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.formular-felt input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px;
+  background-color: #fffdc4;
+  font: inherit;
+}
+
+/* Antal billetter */
+.billet-taeller {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 200px;
+  background-color: #fffdc4;
+  overflow: hidden;
+}
+
+.billet-taeller button {
+  border: none;
+  background: transparent;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.billet-taeller output {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* *************** SÆDEVALG *************** */
+.saedevalg {
+  display: grid;
+  gap: 30px;
+}
+
+.saedevalg h3 {
+  font-size: 16px;
+}
+
+.laerred {
+  text-align: center;
+  border-bottom: 2px solid #fffdc4;
+  padding-bottom: 15px;
+}
+
+/* Sæder */
+.saede-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr))
+    20px
+    repeat(4, minmax(0, 1fr))
+    20px
+    repeat(6, minmax(0, 1fr));
+
+  gap: 6px;
+}
+
+.saede-grid .saede:nth-child(16n + 7) {
+  grid-column: 8;
+}
+
+.saede-grid .saede:nth-child(16n + 11) {
+  grid-column: 13;
+}
+
+.saede {
+  aspect-ratio: 1 / 1;
+  border: none;
+}
+
+/* Ledigt */
+.saede.ledig {
+  background-color: #fffdc4;
+  cursor: pointer;
+}
+
+/* Optaget */
+.saede.optaget {
+  background-color: red;
+  cursor: not-allowed;
+}
+
+/* Valgt */
+.saede.valgt {
+  background-color: #268bff;
+  cursor: pointer;
+}
+
+/* Hover på ledige sæder */
+.saede-grid .saede.ledig:hover {
+  background-color: #268bff;
+}
+
+/* Forklaring */
+.saede-forklaring {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.saede-forklaring > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saede-forklaring .saede {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* *************** PRIVATLIV *************** */
+.privatliv {
+  display: grid;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  inset: 0;
+  background-color: #fffdc4;
+  border-radius: 34px;
+  cursor: pointer;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .switch-slider {
+  background-color: #268bff;
+}
+
+.switch input:checked + .switch-slider::before {
+  transform: translateX(26px);
+}
+
+.switch input:focus-visible + .switch-slider {
+  outline: 3px solid #268bff;
+  outline-offset: 3px;
+}
+
+/* *************** BETALINGSKNAP *************** */
+.betalingsknap {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+/* *************** KOMMENDE FILM *************** */ /* *************** KOMMENDE FILM *************** */
+/* *************** FILM FILTER *************** */
+.film-filter {
+  padding: 60px 20px 30px;
+  border-bottom: 2px solid #fffdc4;
+}
+
+/* Overskrift */
+.film-filter h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+/* Beskrivelse */
+.film-filter > p {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+/* Filterknapper */
+.filter-menu {
+  margin-top: 60px;
+}
+
+.filter-mobil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-desktop {
+  display: none;
+}
+
+.filter-desktop button.aktiv {
+  border-color: #fffdc4;
+}
+
+.filter-menu button {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fffdc4;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ALLE-knap */
+.filter-alle {
+  justify-self: start;
+  padding: 12px 20px;
+  border: 3px solid transparent;
+}
+
+.filter-alle.aktiv {
+  border-color: #fffdc4;
+}
+
+/* Genre dropdown */
+.genre-menu {
+  position: relative;
+  justify-self: end;
+}
+
+.genre-knap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: none;
+  padding: 12px 0;
+}
+
+/* Dropdown indhold */
+.genre-liste {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 160px;
+  background-color: black;
+  border: 2px solid #fffdc4;
+  z-index: 10;
+}
+
+.genre-liste[hidden] {
+  display: none;
+}
+
+.genre-liste button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  text-align: left;
+}
+
+.genre-liste button:hover {
+  background-color: #fffdc4;
+  color: black;
+}
+
+/* *************** FILM OVERSIGT *************** */
+.film-oversigt {
+  padding: 40px 20px 60px;
+}
+
+/* Container med filmkort */
+.film-kort-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* Hvert filmkort */
+.film-kort {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #fffdc4;
+}
+
+/* Filmbilleder */
+.film-kort img {
+  display: block;
+  width: 100%;
+}
+
+/* Tekstindhold */
+.film-kort-indhold {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  flex: 1;
+}
+
+/* Dato og pris */
+.film-dato,
+.film-pris {
+  font-size: 12px;
+}
+
+/* Filmtitel */
+.film-kort h2 {
+  font-size: 22px;
+}
+
+/* Instruktør og spilletid */
+.film-detaljer {
+  font-size: 14px;
+}
+
+/* Læs mere-knap */
+.film-laes-mere {
+  display: block;
+  margin-top: auto;
+  padding: 12px;
+  border: 2px solid #fffdc4;
+  color: #fffdc4;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+}
+
+.film-laes-mere:hover {
+  background-color: #fffdc4;
+  color: black;
 }

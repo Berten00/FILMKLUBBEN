@@ -1,4 +1,267 @@
-/************    Footer     **************/
+/* GENERELLE GRID-KLASSER */
+.grid_2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 15px;
+}
+
+.grid_1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+}
+
+/************    Forside     **************/ /************    Forside     **************/ /************    Forside     **************/
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100dvh - 80px);
+    place-items: center left;
+  }
+
+  .hero-content {
+    grid-column: 1;
+    text-align: left;
+    padding: 40px;
+  }
+
+  .film-knap {
+    justify-self: start;
+  }
+}
+
+/************    NÆSTE FILM     **************/
+@media (min-width: 768px) {
+  .naeste-film {
+    padding: 80px 60px;
+    gap: 30px;
+  }
+
+  .naeste-film h2 {
+    font-size: 48px;
+  }
+
+  .naeste-film-indhold {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .naeste-film picture {
+    width: 100%;
+  }
+
+  .naeste-film picture img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .naeste-film-tekst {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+  }
+}
+
+/* **************** KOMMENDE FILM - DESKTOP **************** */
+@media (min-width: 768px) {
+  .kommende-film {
+    padding: 80px 60px;
+  }
+
+  /* Tre film pr. række */
+  .film-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 25px;
+  }
+
+  /* Billede over tekst */
+  .kommende-film .grid_1-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Billedernes proportioner */
+  .kommende-film .grid_1-2 img {
+    aspect-ratio: 303.5 / 244;
+  }
+
+  /* Centrer tekst */
+  .kommende-film .grid_1-2 > div {
+    text-align: center;
+  }
+
+  .kommende-film .grid_1-2 h3 {
+    margin-bottom: 5px;
+  }
+
+  /* Fjern prik på desktop */
+  .kommende-film .grid_1-2 p:first-of-type::before {
+    content: none;
+  }
+
+  .film-filter .film-overskrift {
+    font-size: clamp(50px, 6vw, 110px);
+  }
+}
+
+/* *************** OM FILMKLUBBEN - DESKTOP *************** */
+@media (min-width: 768px) {
+  .om-filmklubben {
+    padding: 80px 60px;
+    gap: 35px;
+  }
+
+  /* Overskrift */
+  .om-filmklubben h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Beskrivelse */
+  .om-filmklubben .sektion-beskrivelse {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  /* To informationsfelter */
+  .om-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .om-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .om-info p {
+    font-size: 14px;
+  }
+
+  /* Biografbillede */
+  .om-billede {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 6;
+    object-fit: cover;
+  }
+
+  /* Skjul knap */
+  .om-knap {
+    display: none;
+  }
+}
+
+/* *************** TILMELD FILM - DESKTOP *************** */ /* *************** TILMELD FILM - DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .tilmeld-film {
+    padding: 80px 60px;
+  }
+
+  .tilmeld-film-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .tilmeld-film-grid img {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* *************** TILMELD FORMULAR - DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .tilmeld-formular {
+    max-width: 800px;
+    margin-inline: auto;
+    padding: 60px 20px;
+  }
+}
+
+/* *************** SÆDEVALG DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .saedevalg {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .saede-grid {
+    gap: 10px;
+  }
+
+  .saede-forklaring {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .privatliv {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+/* *************** KOMMENDE FILM *************** */ /* *************** KOMMENDE FILM *************** */
+/* *************** FILM FILTER DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .film-filter {
+    padding: 80px 60px 40px;
+  }
+
+  .film-filter h1 {
+    font-size: 48px;
+  }
+
+  .film-filter > p {
+    font-size: 22px;
+    margin-bottom: 60px;
+  }
+  .filter-mobil {
+    display: none;
+  }
+
+  .filter-desktop {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .filter-desktop button {
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+
+  .filter-desktop button:hover {
+    border-color: #fffdc4;
+  }
+}
+
+/* *************** FILM OVERSIGT DESKTOP *************** */
+
+@media (min-width: 768px) {
+  .film-oversigt {
+    padding: 60px;
+  }
+
+  .film-kort-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+  }
+}
+/************    Footer     **************/ /************    Footer     **************/ /************    Footer     **************/
 footer .grid_1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,6 +273,7 @@ footer .socials {
   justify-content: center;
   column-gap: 40px;
 }
+
 @media (width > 800px) {
   footer .footer_links {
     grid-template-columns: repeat(4, 1fr);

@@ -4,16 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>Tilmeld</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="layout.css">
+    <link rel="icon" href="./iconer/faviconet.png" type="image/x-icon">
+    <meta name="description"
+        content="Filmklubben samler filmelskere i København til fælles filmvisninger og samtaler om film. Se kommende film og tilmeld dig næste visning.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="./imgs/overall /logo1.webp" alt="Logo">
+                <img src="./imgs/overall/logo1.webp" alt="Logo" width="400" height="100">
             </a>
         </div>
         <nav>
@@ -22,7 +32,7 @@
                 <li><a href="">Om filmklubben</a></li>
                 <li><a href="">Bliv medlem</a></li>
             </ul>
-            <button class="burger">
+            <button class="burger" aria-label="Åbn menu">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
@@ -32,62 +42,99 @@
 
 
     <main>
-        <h1>TILMELD DIG</h1>
-        <img src="./imgs/tilmeld/img1_brutalist.webp" alt="The brutalist">
-        <h2>THE BRUTALIST</h2>
-        <p>1. januar 19:30 - Biograf</p>
-        <p>Pris: 100kr.</p>
-        <p>Efterkrigstidens Amerika danner rammen om Brady Corbets monumentale fortælling om arkitekten László Tóth, der
-            forsøger
-            at skabe sig et nyt liv.</p>
+        <section class="tilmeld-film">
+            <h2>TILMELD DIG</h2>
 
+            <div class="tilmeld-film-grid">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="./imgs/tilmeld/1img_brutalist.webp">
+                    <img src="./imgs/tilmeld/img1_brutalist.webp"
+                        alt="Scene fra The Brutalist med en mand foran en byggeplads" fetchpriority="high">
+                </picture>
 
-        <div class="grid_1-1">
-            <div>
-                <p>Dit fornavn</p>
-                <p>imput felt</p>
+                <div class="tilmeld-film-tekst">
+                    <h3>THE BRUTALIST</h3>
+                    <p>1. januar 19:30 - Biograf</p>
+                    <p>Pris: 100kr.</p>
+                    <p>Efterkrigstidens Amerika danner rammen om Brady Corbets monumentale fortælling om arkitekten
+                        László Tóth,
+                        der forsøger at skabe sig et nyt liv.</p>
+                </div>
             </div>
-            <div>
-                <p>Dit efternavn</p>
-                <p>imput felt</p>
+        </section>
+
+        <section class="tilmeld-formular">
+            <form id="billet-form">
+
+                <div class="navn-grid">
+                    <div class="formular-felt">
+                        <label for="fornavn">Dit fornavn</label>
+                        <input type="text" id="fornavn" name="fornavn" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="formular-felt">
+                        <label for="efternavn">Dit efternavn</label>
+                        <input type="text" id="efternavn" name="efternavn" autocomplete="family-name" required>
+                    </div>
+                </div>
+
+                <div class="formular-felt">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="formular-felt">
+                    <label for="antal">Antal billetter</label>
+
+                    <div class="billet-taeller">
+                        <button type="button" id="minus" aria-label="Fjern en billet">−</button>
+                        <output id="antal" aria-live="polite">1</output>
+                        <button type="button" id="plus" aria-label="Tilføj en billet">+</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- SÆDEVALG -->
+        <div class="saedevalg">
+            <h3>Vælg dit sæde</h3>
+
+            <div class="laerred">
+                <p>LÆRRED</p>
             </div>
-            <div>
-                <p>Email</p>
-                <p>imput felt</p>
-            </div>
-            <div>
-                <p>Antal billetter</p>
-                <p>- 1 +</p>
+
+            <div class="saede-grid" id="saede-grid"></div>
+
+            <div class="saede-forklaring">
+                <div><span class="saede ledig"></span> Ledig</div>
+                <div><span class="saede optaget"></span> Optaget</div>
+                <div><span class="saede valgt"></span> Valgt</div>
             </div>
         </div>
 
+        <!-- PRIVATLIVSPOLITIK -->
+        <div class="privatliv">
+            <label class="switch">
+                <input type="checkbox" id="accepter" required>
+                <span class="switch-slider"></span>
+            </label>
 
-        <p>Vælg dit sæde</p>
-        <p>LÆRRED</p>
-        <p>streg</p>
-        <img src="./imgs/tilmeld/img2_seats.webp" alt="seats">
-        <div class="grid_1-1">
-            <div><img src="./imgs/tilmeld/img3_ledig-seat.webp" alt="ledig seat">
-                <p>Ledig</p>
-            </div>
-            <div><img src="./imgs/tilmeld/img4_optaget-seat.webp" alt="optaget seat">
-                <p>Optaget</p>
-            </div>
-            <div><img src="./imgs/tilmeld/img5_valgt-seat.webp" alt="valgt seat">
-                <p>Valgt</p>
-            </div>
+            <label for="accepter">
+                Jeg accepterer privatlivspolitikken og brugen af cookies.
+            </label>
         </div>
-        <a href="">Den svære knap</a>
-        <p>Jeg accepterer privatlivspolitikken og brugen af cookies.</p>
-        <a href="">GÅ TIL BETALING</a>
 
+        <!-- BETALINGSKNAP -->
+        <button type="submit" class="knap betalingsknap">
+            GÅ TIL BETALING
+        </button>
 
     </main>
 
     <footer>
         <div class="logo">
             <a href="index.html">
-                <img src="./imgs/overall /logo1.webp" alt="Logo">
+                <img src="./imgs/overall/logo1.webp" alt="Logo" width="400" height="100">
             </a>
         </div>
 
@@ -99,8 +146,13 @@
         </div>
 
         <div class="socials grid_1-1">
-            <img src="./imgs/overall /icon1_facebook.webp" alt="Facebook">
-            <img src="./imgs/overall /icon2_instagram.webp" alt="Instagram">
+            <a href="./tilmeld.html">
+                <img src="./imgs/overall/icon1_facebook.webp" alt="Facebook">
+            </a>
+
+            <a href="./tilmeld.html">
+                <img src="./imgs/overall/icon2_instagram.webp" alt="Instagram">
+            </a>
         </div>
 
         <p>© 2026 Filmklubben · København</p>
